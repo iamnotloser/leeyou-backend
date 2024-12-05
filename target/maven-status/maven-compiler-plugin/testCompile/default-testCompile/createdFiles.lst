@@ -1,0 +1,5 @@
+com\leeyoubackend\service\UsersServiceTest.class
+com\leeyoubackend\LeeyouBackendApplicationTests.class
+com\leeyoubackend\service\insertUsersTest.class
+com\leeyoubackend\service\redissonTest.class
+com\leeyoubackend\service\redistest.class

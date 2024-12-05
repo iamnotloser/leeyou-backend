@@ -1,0 +1,239 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e72caed3-9ac8-4bf2-b27d-eba188f083f1\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"customMavenHome\" value=\"D:\\develop\\apache-maven-3.9.9\" />\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"CUSTOM\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\develop\\apache-maven-3.9.9\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"MavenRunner\">\r\n    <option name=\"jreName\" value=\"21\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"DEPENDENCY_CHECKER_PROBLEMS_TAB\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pEYPNbTdJMw2DYstJ9V7vpf3jG\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.InsertUsers.executor\": \"Run\",\r\n    \"JAR Application.leeyou_backend-0.0.1-SNAPSHOT.jar.executor\": \"Coverage\",\r\n    \"JUnit.SampleTest.testSelect.executor\": \"Run\",\r\n    \"JUnit.UserCenterApplicationTests.testSelect.executor\": \"Run\",\r\n    \"JUnit.UsersServiceTest.searchUsersByTags.executor\": \"Run\",\r\n    \"JUnit.UsersServiceTest.test.executor\": \"Run\",\r\n    \"JUnit.UsersServiceTest.testAddUser.executor\": \"Run\",\r\n    \"JUnit.UsersServiceTest.userRegister.executor\": \"Run\",\r\n    \"JUnit.insertUsersTest.doConcurrencyInsertUsers.executor\": \"Run\",\r\n    \"JUnit.insertUsersTest.doInsertUsers.executor\": \"Run\",\r\n    \"JUnit.insertUsersTest.dodeleteUsers.executor\": \"Run\",\r\n    \"JUnit.redissonTest.test.executor\": \"Run\",\r\n    \"JUnit.redissonTest.testWatchDog.executor\": \"Run\",\r\n    \"JUnit.redistest.test.executor\": \"Run\",\r\n    \"Maven.leeyou_backend [clean].executor\": \"Run\",\r\n    \"Maven.leeyou_backend [install].executor\": \"Run\",\r\n    \"Maven.leeyou_backend [package].executor\": \"Run\",\r\n    \"Maven.user-center [install].executor\": \"Run\",\r\n    \"Maven.user-center [package].executor\": \"Run\",\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"Spring Boot.LeeyouBackendApplication.executor\": \"Debug\",\r\n    \"Spring Boot.UserCenterApplication.executor\": \"Run\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"jdk.selected.JAVA_MODULE\": \"21\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/code/partener/leeyou-backend\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"mysql\",\r\n      \"redis\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"ReactorSettings\">\r\n    <option name=\"notificationShown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"com.leeyoubackend.pojo.request\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Java-Web-Project\\user-center\\src\\main\\resources\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"com.usercenter.service\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"com.leeyoubackend.service\" />\r\n      <recent name=\"com.usercenter.service\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.LeeyouBackendApplication\">\r\n    <configuration name=\"insertUsersTest.doConcurrencyInsertUsers\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"leeyou_backend\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.leeyoubackend.service.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.leeyoubackend.service\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.leeyoubackend.service.insertUsersTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"doConcurrencyInsertUsers\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"insertUsersTest.dodeleteUsers\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"leeyou_backend\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.leeyoubackend.service.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.leeyoubackend.service\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.leeyoubackend.service.insertUsersTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"dodeleteUsers\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"redissonTest.test\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"leeyou_backend\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.leeyoubackend.service.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.leeyoubackend.service\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.leeyoubackend.service.redissonTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"test\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"redissonTest.testWatchDog\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"leeyou_backend\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.leeyoubackend.service.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.leeyoubackend.service\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.leeyoubackend.service.redissonTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testWatchDog\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LeeyouBackendApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"SCHEDULED_DEBUGGER\" value=\"true\" />\r\n      <module name=\"leeyou_backend\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.leeyoubackend.LeeyouBackendApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.leeyoubackend.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"JUnit.redissonTest.testWatchDog\" />\r\n      <item itemvalue=\"JUnit.redissonTest.test\" />\r\n      <item itemvalue=\"JUnit.insertUsersTest.dodeleteUsers\" />\r\n      <item itemvalue=\"JUnit.insertUsersTest.doConcurrencyInsertUsers\" />\r\n      <item itemvalue=\"Spring Boot.LeeyouBackendApplication\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.LeeyouBackendApplication\" />\r\n        <item itemvalue=\"JUnit.redissonTest.testWatchDog\" />\r\n        <item itemvalue=\"JUnit.redissonTest.test\" />\r\n        <item itemvalue=\"JUnit.insertUsersTest.doConcurrencyInsertUsers\" />\r\n        <item itemvalue=\"JUnit.insertUsersTest.dodeleteUsers\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e72caed3-9ac8-4bf2-b27d-eba188f083f1\" name=\"Changes\" comment=\"\" />\r\n      <created>1732332680382</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732332680382</updated>\r\n      <workItem from=\"1732332681291\" duration=\"12489000\" />\r\n      <workItem from=\"1732349921335\" duration=\"24195000\" />\r\n      <workItem from=\"1732429782641\" duration=\"12084000\" />\r\n      <workItem from=\"1732496280818\" duration=\"14488000\" />\r\n      <workItem from=\"1732581117786\" duration=\"16650000\" />\r\n      <workItem from=\"1732606776044\" duration=\"2324000\" />\r\n      <workItem from=\"1732609792811\" duration=\"68000\" />\r\n      <workItem from=\"1732610062194\" duration=\"7609000\" />\r\n      <workItem from=\"1732665934882\" duration=\"713000\" />\r\n      <workItem from=\"1732669252986\" duration=\"11947000\" />\r\n      <workItem from=\"1732714426912\" duration=\"4447000\" />\r\n      <workItem from=\"1732854160525\" duration=\"2987000\" />\r\n      <workItem from=\"1732867023913\" duration=\"1754000\" />\r\n      <workItem from=\"1732868784532\" duration=\"479000\" />\r\n      <workItem from=\"1732869281909\" duration=\"44000\" />\r\n      <workItem from=\"1732869347021\" duration=\"5317000\" />\r\n      <workItem from=\"1732876407594\" duration=\"1140000\" />\r\n      <workItem from=\"1732882973766\" duration=\"37231000\" />\r\n      <workItem from=\"1733057009481\" duration=\"15696000\" />\r\n      <workItem from=\"1733142053664\" duration=\"12946000\" />\r\n      <workItem from=\"1733188780493\" duration=\"2625000\" />\r\n      <workItem from=\"1733191725676\" duration=\"452000\" />\r\n      <workItem from=\"1733215531826\" duration=\"10602000\" />\r\n      <workItem from=\"1733228216708\" duration=\"8155000\" />\r\n      <workItem from=\"1733275702358\" duration=\"42014000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/leeyoubackend/controller/UserController.java</url>\r\n          <line>38</line>\r\n          <option name=\"timeStamp\" value=\"10\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/leeyoubackend/service/impl/UsersServiceImpl.java</url>\r\n          <line>210</line>\r\n          <option name=\"timeStamp\" value=\"13\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/leeyoubackend/controller/TeamController.java</url>\r\n          <line>36</line>\r\n          <option name=\"timeStamp\" value=\"18\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/leeyoubackend/service/impl/TeamServiceImpl.java</url>\r\n          <line>36</line>\r\n          <option name=\"timeStamp\" value=\"22\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/com/leeyoubackend/service/impl/TeamServiceImpl.java</url>\r\n          <line>78</line>\r\n          <option name=\"timeStamp\" value=\"23\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <pin-to-top-manager>\r\n      <pinned-members>\r\n        <PinnedItemInfo parentTag=\"java.lang.String\" memberName=\"value\" />\r\n      </pinned-members>\r\n    </pin-to-top-manager>\r\n    <watches-manager>\r\n      <configuration name=\"SpringBootApplicationConfigurationType\">\r\n        <watch expression=\"user != null &amp;&amp; Objects.equals(user.getRole(), ADMIN_ROLE)\" />\r\n        <watch expression=\"Objects.equals(user.getRole(), ADMIN_ROLE)\" />\r\n        <watch expression=\"users\" language=\"JAVA\" />\r\n        <watch expression=\"user\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/leeyou_backend$.ic\" NAME=\" Coverage Results\" MODIFIED=\"1733056340562\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f85cf94d6a1b929fc159b2ea53d3c8c4541cee61)
++++ b/.idea/workspace.xml	(date 1733374167397)
+@@ -4,11 +4,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e72caed3-9ac8-4bf2-b27d-eba188f083f1" name="Changes" comment="" />
++    <list default="true" id="e72caed3-9ac8-4bf2-b27d-eba188f083f1" name="Changes" comment="leeyou_backend first init" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ChangesViewManager">
++    <option name="groupingKeys">
++      <option value="directory" />
++    </option>
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -19,6 +24,21 @@
+       </list>
+     </option>
+   </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;iamnotloser&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/iamnotloser/leeyou-backend.git&quot;,
++    &quot;accountId&quot;: &quot;ff20bf20-ca2e-4b35-96cc-6d0c225f40d4&quot;
++  }
++}</component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+@@ -38,61 +58,65 @@
+   &quot;associatedIndex&quot;: 3
+ }</component>
+   <component name="ProjectId" id="2pEYPNbTdJMw2DYstJ9V7vpf3jG" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.InsertUsers.executor": "Run",
+-    "JAR Application.leeyou_backend-0.0.1-SNAPSHOT.jar.executor": "Coverage",
+-    "JUnit.SampleTest.testSelect.executor": "Run",
+-    "JUnit.UserCenterApplicationTests.testSelect.executor": "Run",
+-    "JUnit.UsersServiceTest.searchUsersByTags.executor": "Run",
+-    "JUnit.UsersServiceTest.test.executor": "Run",
+-    "JUnit.UsersServiceTest.testAddUser.executor": "Run",
+-    "JUnit.UsersServiceTest.userRegister.executor": "Run",
+-    "JUnit.insertUsersTest.doConcurrencyInsertUsers.executor": "Run",
+-    "JUnit.insertUsersTest.doInsertUsers.executor": "Run",
+-    "JUnit.insertUsersTest.dodeleteUsers.executor": "Run",
+-    "JUnit.redissonTest.test.executor": "Run",
+-    "JUnit.redissonTest.testWatchDog.executor": "Run",
+-    "JUnit.redistest.test.executor": "Run",
+-    "Maven.leeyou_backend [clean].executor": "Run",
+-    "Maven.leeyou_backend [install].executor": "Run",
+-    "Maven.leeyou_backend [package].executor": "Run",
+-    "Maven.user-center [install].executor": "Run",
+-    "Maven.user-center [package].executor": "Run",
+-    "RequestMappingsPanelOrder0": "0",
+-    "RequestMappingsPanelOrder1": "1",
+-    "RequestMappingsPanelWidth0": "75",
+-    "RequestMappingsPanelWidth1": "75",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "Spring Boot.LeeyouBackendApplication.executor": "Debug",
+-    "Spring Boot.UserCenterApplication.executor": "Run",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+-    "jdk.selected.JAVA_MODULE": "21",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "D:/code/partener/leeyou-backend",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Project",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;Application.InsertUsers.executor&quot;: &quot;Run&quot;,
++    &quot;JAR Application.leeyou_backend-0.0.1-SNAPSHOT.jar.executor&quot;: &quot;Coverage&quot;,
++    &quot;JUnit.SampleTest.testSelect.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.UserCenterApplicationTests.testSelect.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.UsersServiceTest.searchUsersByTags.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.UsersServiceTest.test.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.UsersServiceTest.testAddUser.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.UsersServiceTest.userRegister.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.insertUsersTest.doConcurrencyInsertUsers.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.insertUsersTest.doInsertUsers.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.insertUsersTest.dodeleteUsers.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.redissonTest.test.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.redissonTest.testWatchDog.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.redistest.test.executor&quot;: &quot;Run&quot;,
++    &quot;Maven.leeyou_backend [clean].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.leeyou_backend [install].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.leeyou_backend [package].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.user-center [install].executor&quot;: &quot;Run&quot;,
++    &quot;Maven.user-center [package].executor&quot;: &quot;Run&quot;,
++    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
++    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
++    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
++    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;Spring Boot.LeeyouBackendApplication.executor&quot;: &quot;Debug&quot;,
++    &quot;Spring Boot.UserCenterApplication.executor&quot;: &quot;Run&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/code/partener/leeyou-backend&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+-  "keyToStringList": {
+-    "DatabaseDriversLRU": [
+-      "mysql",
+-      "redis"
++  &quot;keyToStringList&quot;: {
++    &quot;DatabaseDriversLRU&quot;: [
++      &quot;mysql&quot;,
++      &quot;redis&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="ReactorSettings">
+     <option name="notificationShown" value="true" />
+   </component>
+@@ -261,13 +285,62 @@
+       <workItem from="1733191725676" duration="452000" />
+       <workItem from="1733215531826" duration="10602000" />
+       <workItem from="1733228216708" duration="8155000" />
+-      <workItem from="1733275702358" duration="42014000" />
++      <workItem from="1733275702358" duration="48253000" />
++      <workItem from="1733372029421" duration="1884000" />
++    </task>
++    <task id="LOCAL-00001" summary="leeyou_backend first init">
++      <option name="closed" value="true" />
++      <created>1733363607832</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1733363607832</updated>
++    </task>
++    <task id="LOCAL-00002" summary="leeyou_backend first init">
++      <option name="closed" value="true" />
++      <created>1733371794028</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1733371794028</updated>
++    </task>
++    <task id="LOCAL-00003" summary="leeyou_backend first init">
++      <option name="closed" value="true" />
++      <created>1733372599885</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1733372599885</updated>
++    </task>
++    <task id="LOCAL-00004" summary="leeyou_backend first init">
++      <option name="closed" value="true" />
++      <created>1733373911435</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1733373911435</updated>
+     </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="leeyou_backend first init" />
++    <option name="LAST_COMMIT_MESSAGE" value="leeyou_backend first init" />
++  </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+       <breakpoints>
+@@ -311,6 +384,10 @@
+         <watch expression="user" />
+       </configuration>
+     </watches-manager>
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/leeyou_backend$.ic" NAME=" Coverage Results" MODIFIED="1733056340562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

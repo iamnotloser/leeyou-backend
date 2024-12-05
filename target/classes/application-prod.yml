@@ -1,0 +1,18 @@
+
+spring:
+  application:
+    name: leeyou_backend
+    #数据库连接信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://gz-cynosdbmysql-grp-o96tnry3.sql.tencentcdb.com:23456/user_center_web
+    username: root
+    password: 18370961542Mask@
+    #session超时时间
+  session:
+    timeout: 86400
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+

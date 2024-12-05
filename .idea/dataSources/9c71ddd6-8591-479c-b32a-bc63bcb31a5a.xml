@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="0@localhost">
+  <database-model serializer="dbm" dbms="REDIS" family-id="REDIS" format-version="4.53">
+    <root id="1">
+      <ServerVersion>5.0.14.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="0">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="1"/>
+    <schema id="4" parent="1" name="2"/>
+    <schema id="5" parent="1" name="3"/>
+    <schema id="6" parent="1" name="4"/>
+    <schema id="7" parent="1" name="5"/>
+    <schema id="8" parent="1" name="6"/>
+    <schema id="9" parent="1" name="7"/>
+    <schema id="10" parent="1" name="8"/>
+    <schema id="11" parent="1" name="9"/>
+    <schema id="12" parent="1" name="10"/>
+    <schema id="13" parent="1" name="11"/>
+    <schema id="14" parent="1" name="12"/>
+    <schema id="15" parent="1" name="13"/>
+    <schema id="16" parent="1" name="14"/>
+    <schema id="17" parent="1" name="15"/>
+    <collection id="18" parent="2" name="spring:session:expirations:1733236860000"/>
+    <collection id="19" parent="2" name="spring:session:expirations:1733275740000"/>
+    <collection id="20" parent="2" name="spring:session:expirations:1733276820000"/>
+    <collection id="21" parent="2" name="spring:session:expirations:1733294280000"/>
+    <collection id="22" parent="2" name="spring:session:expirations:1733308260000"/>
+    <collection id="23" parent="2" name="spring:session:sessions:1bf4748f-01cc-4553-9b34-d6a7efd34f52"/>
+    <collection id="24" parent="2" name="spring:session:sessions:633b600d-10a3-456c-9c36-39c0162ac3ff"/>
+    <collection id="25" parent="2" name="spring:session:sessions:expires:1bf4748f-01cc-4553-9b34-d6a7efd34f52"/>
+    <collection id="26" parent="2" name="spring:session:sessions:expires:633b600d-10a3-456c-9c36-39c0162ac3ff"/>
+    <collection id="27" parent="2" name="��&#xffef;￠&#x5;t&#xffef;￠&#x3;age"/>
+    <collection id="28" parent="2" name="��&#xffef;￠&#x5;t&#xffef;￠&#x4;name"/>
+    <collection id="29" parent="2" name="��&#xffef;￠&#x5;t&#xffef;￠&#x4;user"/>
+    <collection id="30" parent="2" name="��&#xffef;￠&#x5;t&#xffef;￠&#x6;gender"/>
+  </database-model>
+</dataSource>
