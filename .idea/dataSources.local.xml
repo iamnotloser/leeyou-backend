@@ -48,9 +48,7 @@
       </schema-mapping>
     </data-source>
     <data-source name="0@127.0.0.1" uuid="0f9888e5-cc1d-46b8-8a28-1fbb7f54d396">
-      <database-info product="Redis Standalone" version="5.0.14.1" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="5.0.14.1" exact-driver-version="1.5">
-        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
-      </database-info>
+      <database-info product="Redis Standalone" version="5.0.14.1" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="5.0.14.1" exact-driver-version="1.5" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <schema-mapping />
     </data-source>
