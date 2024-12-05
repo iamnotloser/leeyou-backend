@@ -3,6 +3,12 @@ package com.leeyoubackend.service;
 import com.leeyoubackend.pojo.Team;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.leeyoubackend.pojo.Users;
+import com.leeyoubackend.pojo.dto.TeamQuery;
+import com.leeyoubackend.pojo.request.TeamJoinRequst;
+import com.leeyoubackend.pojo.request.TeamUpdateRequst;
+import com.leeyoubackend.pojo.vo.TeamUserVO;
+
+import java.util.List;
 
 /**
 * @author leeyou
@@ -17,4 +23,22 @@ public interface TeamService extends IService<Team> {
  * @return
  */
     long addTeam(Team team, Users loginuser);
+
+    /**
+     * 搜索队伍
+     *
+     * @param teamQuery
+     * @param loginuser
+     * @return
+     */
+    List<TeamUserVO> listTeams(TeamQuery teamQuery, Boolean isAdmin);
+
+    boolean updateTeam(TeamUpdateRequst teamUpdateRequst,Users loginuser);
+
+    /**
+     * 加入队伍
+     * @param teamJoinRequst
+     * @return
+     */
+    boolean joinTeam(TeamJoinRequst teamJoinRequst,Users loginUser);
 }

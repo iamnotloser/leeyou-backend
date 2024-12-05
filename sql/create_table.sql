@@ -29,3 +29,19 @@ create table if not exists user_center.user_team
 
 )
     comment '队伍表';
+
+SELECT id,
+       name,
+       user_id,
+       max_num,
+       description,
+       password,
+       expire_time,
+       status,
+       create_time,
+       update_time,
+       is_delete
+FROM team
+WHERE is_delete = 0
+  AND (id = ? AND (name LIKE ? OR description LIKE ?) AND name LIKE ? AND description LIKE ? AND max_num = ? AND
+       user_id = ? AND status = ? AND (expire_time < ?) OR expire_time IS NULL)

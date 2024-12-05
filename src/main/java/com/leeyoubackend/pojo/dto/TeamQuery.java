@@ -20,7 +20,10 @@ public class TeamQuery extends PageRequest {
      */
 
     private Long id;
-
+    /**
+     * 搜索关键词(同时对name和description进行搜索)
+     */
+    private String searchText;
     /**
      * 队伍名
      */
@@ -41,5 +44,9 @@ public class TeamQuery extends PageRequest {
      */
     private String description;
 
+    /**
+     * 状态
+     */
+    private Integer status;
 
 }

@@ -9,13 +9,15 @@ import com.leeyoubackend.pojo.Team;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.dto.TeamQuery;
 import com.leeyoubackend.pojo.request.TeamAddRequst;
+import com.leeyoubackend.pojo.request.TeamJoinRequst;
+import com.leeyoubackend.pojo.request.TeamUpdateRequst;
+import com.leeyoubackend.pojo.vo.TeamUserVO;
 import com.leeyoubackend.service.TeamService;
 import com.leeyoubackend.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -57,11 +59,12 @@ public class TeamController {
     }
 
     @PostMapping("/update")
-    public BaseResponse<Boolean> updateTeam(@RequestBody Team team, HttpServletRequest req){
-        if(team == null){
+    public BaseResponse<Boolean> updateTeam(@RequestBody TeamUpdateRequst teamUpdateRequst, HttpServletRequest req){
+        if(teamUpdateRequst == null){
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-        boolean result = teamService.updateById(team);
+        Users currentUser = usersService.getCurrentUser(req);
+        boolean result = teamService.updateTeam(teamUpdateRequst,currentUser);
         if(!result){
             throw new BusinesException(ErrorCode.OPERATION_ERROR,"更新失败");
         }
@@ -79,19 +82,28 @@ public class TeamController {
         }
         return BaseResponse.success(team);
     }
+//    @GetMapping("/list")
+//    public BaseResponse<List<Team>> listTeams(TeamQuery teamQuery){
+//        if(teamQuery == null){
+//            throw new BusinesException(ErrorCode.NULL_ERROR);
+//        }
+//        Team team = new Team();
+//        try {
+//            BeanUtils.copyProperties(teamQuery,team);
+//        } catch (BeansException e) {
+//            throw new BusinesException(ErrorCode.SYSTEM_ERROR);
+//        }
+//        QueryWrapper<Team> queryWrapper = new QueryWrapper<>(team);
+//        return BaseResponse.success(teamService.list(queryWrapper));
+//    }
     @GetMapping("/list")
-    public BaseResponse<List<Team>> listTeams(TeamQuery teamQuery){
-        if(teamQuery == null){
+    public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery,HttpServletRequest req) {
+        Boolean result = usersService.isAdmin(req);
+        if (teamQuery == null) {
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-        Team team = new Team();
-        try {
-            BeanUtils.copyProperties(teamQuery,team);
-        } catch (BeansException e) {
-            throw new BusinesException(ErrorCode.SYSTEM_ERROR);
-        }
-        QueryWrapper<Team> queryWrapper = new QueryWrapper<>(team);
-        return BaseResponse.success(teamService.list(queryWrapper));
+        List<TeamUserVO> teamList = teamService.listTeams(teamQuery,result);
+        return BaseResponse.success(teamList);
     }
 
     @GetMapping("/list/page")
@@ -110,5 +122,18 @@ public class TeamController {
         return BaseResponse.success(teamService.page(page,queryWrapper));
     }
 
+    @PostMapping("/join")
+    public BaseResponse<Boolean> joinTeam(@RequestBody TeamJoinRequst teamJoinRequst, HttpServletRequest req){
+        if(teamJoinRequst == null){
+            throw new BusinesException(ErrorCode.NULL_ERROR);
+        }
+
+        Users currentUser = usersService.getCurrentUser(req);
+        boolean result = teamService.joinTeam(teamJoinRequst,currentUser);
+        if(!result){
+            throw new BusinesException(ErrorCode.OPERATION_ERROR,"加入失败");
+        }
+        return BaseResponse.success(true);
+    }
 
 }
