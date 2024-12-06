@@ -9,7 +9,8 @@ import com.leeyoubackend.pojo.Team;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.dto.TeamQuery;
 import com.leeyoubackend.pojo.request.TeamAddRequst;
-import com.leeyoubackend.pojo.request.TeamJoinRequst;
+import com.leeyoubackend.pojo.request.TeamJoinRequest;
+import com.leeyoubackend.pojo.request.TeamQuitRequest;
 import com.leeyoubackend.pojo.request.TeamUpdateRequst;
 import com.leeyoubackend.pojo.vo.TeamUserVO;
 import com.leeyoubackend.service.TeamService;
@@ -46,12 +47,13 @@ public class TeamController {
         return BaseResponse.success(teamId);
   }
 
-    @PostMapping("/delete")
-    public BaseResponse<Boolean> deleteTeam(@RequestBody long id, HttpServletRequest req){
+    @GetMapping ("/delete")
+    public BaseResponse<Boolean> deleteTeam(@RequestParam long id, HttpServletRequest req){
         if(id <= 0){
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-        boolean result = teamService.removeById(id);
+        Users currentUser = usersService.getCurrentUser(req);
+        boolean result = teamService.deleteTeam(id,currentUser);
         if(!result){
             throw new BusinesException(ErrorCode.OPERATION_ERROR,"删除失败");
         }
@@ -123,7 +125,7 @@ public class TeamController {
     }
 
     @PostMapping("/join")
-    public BaseResponse<Boolean> joinTeam(@RequestBody TeamJoinRequst teamJoinRequst, HttpServletRequest req){
+    public BaseResponse<Boolean> joinTeam(@RequestBody TeamJoinRequest teamJoinRequst, HttpServletRequest req){
         if(teamJoinRequst == null){
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
@@ -136,4 +138,16 @@ public class TeamController {
         return BaseResponse.success(true);
     }
 
+    @PostMapping("/quit")
+    public BaseResponse<Boolean> quitTeam(@RequestBody TeamQuitRequest teamQuitRequest, HttpServletRequest req){
+        if(teamQuitRequest == null){
+            throw new BusinesException(ErrorCode.NULL_ERROR);
+        }
+        Users currentUser = usersService.getCurrentUser(req);
+        boolean result = teamService.quitTeam(teamQuitRequest,currentUser);
+        if(!result){
+            throw new BusinesException(ErrorCode.OPERATION_ERROR,"加入失败");
+        }
+        return BaseResponse.success(true);
+    }
 }

@@ -3,6 +3,7 @@ D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\impl\Use
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\impl\TagsServiceImpl.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\impl\TeamServiceImpl.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\exception\GlobalExceptionHandler.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\TeamJoinRequest.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\UsersService.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\dto\TeamQuery.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\config\RedisTemplateConfig.java
@@ -26,9 +27,15 @@ D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\Users.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\mapper\TagsMapper.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\UserTeam.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\mapper\TeamMapper.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\TeamUpdateRequst.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\UserRegisterRequest.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\TeamAddRequst.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\UserLoginRequest.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\job\PreCacheJob.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\vo\UserVO.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\TeamService.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\config\MybatisPlusConfig.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\vo\TeamUserVO.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\enums\TeamStausEnum.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\TeamQuitRequest.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\mapper\UsersMapper.java

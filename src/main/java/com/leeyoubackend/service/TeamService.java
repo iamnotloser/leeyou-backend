@@ -4,7 +4,8 @@ import com.leeyoubackend.pojo.Team;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.dto.TeamQuery;
-import com.leeyoubackend.pojo.request.TeamJoinRequst;
+import com.leeyoubackend.pojo.request.TeamJoinRequest;
+import com.leeyoubackend.pojo.request.TeamQuitRequest;
 import com.leeyoubackend.pojo.request.TeamUpdateRequst;
 import com.leeyoubackend.pojo.vo.TeamUserVO;
 
@@ -40,5 +41,9 @@ public interface TeamService extends IService<Team> {
      * @param teamJoinRequst
      * @return
      */
-    boolean joinTeam(TeamJoinRequst teamJoinRequst,Users loginUser);
+    boolean joinTeam(TeamJoinRequest teamJoinRequst, Users loginUser);
+
+    boolean quitTeam(TeamQuitRequest teamQuitRequest, Users currentUser);
+
+    boolean deleteTeam(long id, Users currentUser);
 }
