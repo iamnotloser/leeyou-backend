@@ -32,7 +32,7 @@ public interface TeamService extends IService<Team> {
      * @param loginuser
      * @return
      */
-    List<TeamUserVO> listTeams(TeamQuery teamQuery, Boolean isAdmin);
+    List<TeamUserVO> listTeams(TeamQuery teamQuery, Users loginUser);
 
     boolean updateTeam(TeamUpdateRequst teamUpdateRequst,Users loginuser);
 
@@ -46,4 +46,13 @@ public interface TeamService extends IService<Team> {
     boolean quitTeam(TeamQuitRequest teamQuitRequest, Users currentUser);
 
     boolean deleteTeam(long id, Users currentUser);
+
+    /**
+     * 得到用户所有创建的队伍
+     * @param loginuser
+     * @return
+     */
+    List<Team> getAllCreatedTeams(Users loginuser);
+
+    List<Team> getAllJoinedTeams(List<Long> idList,Users loginuser);
 }

@@ -90,9 +90,7 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
 
         boolean result = this.save(team);
         Long teamId = team.getId();
-        if(true){
-            throw new BusinesException(ErrorCode.OPERATION_ERROR,"插入失败");
-        }
+
         if(!result || teamId==null){
             throw new BusinesException(ErrorCode.OPERATION_ERROR,"插入失败");
         }
@@ -109,15 +107,22 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
     }
 
     @Override
-    public List<TeamUserVO> listTeams(TeamQuery teamQuery, Boolean isAdmin) {
+    public List<TeamUserVO> listTeams(TeamQuery teamQuery,Users loginUser) {
         QueryWrapper<Team> queryWrapper = new QueryWrapper<>();
+
         if(teamQuery != null){
             Long id = teamQuery.getId();
             if(id != null && id > 0){
                 queryWrapper.eq("id",id);
+                Team originTeam = this.getTeamById(id);
+                BeanUtils.copyProperties(originTeam,teamQuery);
             }
             String searchText = teamQuery.getSearchText();
             String description = teamQuery.getDescription();
+            List<Long> idList = teamQuery.getIdList();
+            if(!CollectionUtils.isEmpty(idList)){
+                queryWrapper.in("id",idList);
+            }
             if(StringUtils.isNotBlank(searchText)){
                 queryWrapper.and(qw -> qw.like("name",searchText).or().like("description",description));
             }
@@ -144,8 +149,10 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
             /**
              * 根据状态查询
              */
+            //如果是创建人的话，私有或者加密队伍均能查询
             Integer status = teamQuery.getStatus();
             TeamStausEnum statusEnum = TeamStausEnum.getEnumByValue(status);
+            Boolean isAdmin = usersService.isAdmin(loginUser);
             if(statusEnum == null){
                 statusEnum = TeamStausEnum.PUBLIC;
             }
@@ -254,15 +261,9 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
                 throw new BusinesException(ErrorCode.PARAMS_ERROR,"密码错误");
             }
         }
-        QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id",userid);
 
-        long hasJoinNum = userTeamService.count(queryWrapper);
-        if(hasJoinNum > 5){
-            throw new BusinesException(ErrorCode.PARAMS_ERROR,"最多创建和加入5个队伍");
-        }
         //不能加入已加入的队伍
-        queryWrapper = new QueryWrapper<>();
+        QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id",userid);
         queryWrapper.eq("team_id",teamId);
         long hasUserJoinTeam = userTeamService.count(queryWrapper);
@@ -273,6 +274,13 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         long hasJoinUserNum = getHasJoinUserNum(teamId);
         if(team.getMaxNum() <= hasJoinUserNum){
             throw new BusinesException(ErrorCode.PARAMS_ERROR,"队伍已满");
+        }
+        queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id",userid);
+
+        long hasJoinNum = userTeamService.count(queryWrapper);
+        if(hasJoinNum > 5){
+            throw new BusinesException(ErrorCode.PARAMS_ERROR,"最多创建和加入5个队伍");
         }
         //修改队伍信息
         UserTeam userTeam = new UserTeam();
@@ -287,8 +295,7 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
     private long getHasJoinUserNum(Long teamId) {
         QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("team_id", teamId);
-        long hasJoinUserNum = userTeamService.count(queryWrapper);
-        return hasJoinUserNum;
+        return userTeamService.count(queryWrapper);
     }
 
     @Override
@@ -380,6 +387,29 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         return this.removeById(teamid);
 
     }
+
+    @Override
+    public List<Team> getAllCreatedTeams(Users loginuser) {
+        long id = loginuser.getId();
+        QueryWrapper<Team> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id",id);
+        queryWrapper.and(qw ->qw.gt("expire_time",new Date()));
+        return this.list(queryWrapper);
+    }
+
+    @Override
+    public List<Team> getAllJoinedTeams(List<Long> teamIdList,Users loginuser) {
+        long id = loginuser.getId();
+        QueryWrapper<Team> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("id",teamIdList);
+        queryWrapper.and(qw ->qw.gt("expire_time",new Date()).or().isNull("expire_time"));
+        queryWrapper.ne("user_id",id);
+        List<Team> teamList = this.list(queryWrapper);
+        return teamList;
+    }
+
+
+
 }
 
 

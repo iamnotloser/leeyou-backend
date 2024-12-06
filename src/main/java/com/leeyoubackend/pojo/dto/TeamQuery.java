@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 队伍查询包装类
@@ -39,6 +40,10 @@ public class TeamQuery extends PageRequest {
      */
     private Integer maxNum;
 
+    /**
+     * idlist
+     */
+    private List<Long> idList;
     /**
      * 队伍描述
      */

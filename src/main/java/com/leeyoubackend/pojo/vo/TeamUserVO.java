@@ -43,7 +43,6 @@ public class TeamUserVO implements Serializable {
     private String description;
 
 
-
     /**
      * 过期时间
      */
@@ -63,7 +62,6 @@ public class TeamUserVO implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
 
 
     @TableField(exist = false)

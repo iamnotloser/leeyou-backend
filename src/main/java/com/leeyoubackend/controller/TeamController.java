@@ -6,6 +6,7 @@ import com.leeyoubackend.constant.BaseResponse;
 import com.leeyoubackend.constant.ErrorCode;
 import com.leeyoubackend.exception.BusinesException;
 import com.leeyoubackend.pojo.Team;
+import com.leeyoubackend.pojo.UserTeam;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.dto.TeamQuery;
 import com.leeyoubackend.pojo.request.TeamAddRequst;
@@ -14,6 +15,7 @@ import com.leeyoubackend.pojo.request.TeamQuitRequest;
 import com.leeyoubackend.pojo.request.TeamUpdateRequst;
 import com.leeyoubackend.pojo.vo.TeamUserVO;
 import com.leeyoubackend.service.TeamService;
+import com.leeyoubackend.service.UserTeamService;
 import com.leeyoubackend.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -22,7 +24,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/team")
@@ -32,6 +37,8 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
+    @Autowired
+    private UserTeamService userTeamService;
     @Autowired
     private UsersService usersService;
 
@@ -100,11 +107,11 @@ public class TeamController {
 //    }
     @GetMapping("/list")
     public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery,HttpServletRequest req) {
-        Boolean result = usersService.isAdmin(req);
+        Users currentUser = usersService.getCurrentUser(req);
         if (teamQuery == null) {
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-        List<TeamUserVO> teamList = teamService.listTeams(teamQuery,result);
+        List<TeamUserVO> teamList = teamService.listTeams(teamQuery,currentUser);
         return BaseResponse.success(teamList);
     }
 
@@ -149,5 +156,33 @@ public class TeamController {
             throw new BusinesException(ErrorCode.OPERATION_ERROR,"加入失败");
         }
         return BaseResponse.success(true);
+    }
+
+    /**
+     * 获取已加入的队伍排除自己创建的队伍
+     * @param req
+     * @return
+     */
+    @GetMapping("/list/my/join")
+    public BaseResponse<List<Team>> joinTeams(HttpServletRequest req) {
+        Users currentUser = usersService.getCurrentUser(req);
+        QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id",currentUser.getId());
+        List<UserTeam> userTeamList = userTeamService.list(queryWrapper);
+        Map<Long, List<UserTeam>> listMap = userTeamList.stream().collect(Collectors.groupingBy(UserTeam::getTeamId));
+        List<Long> idlist = new ArrayList<>(listMap.keySet());
+        List<Team> teamList = teamService.getAllJoinedTeams(idlist,currentUser);
+        return BaseResponse.success(teamList);
+    }
+
+    /**
+     * 获取我创建的队伍
+     * @param req
+     * @return
+     */
+    @GetMapping("/list/my")
+    public BaseResponse<List<Team>> createTeams(HttpServletRequest req) {
+        Users currentUser = usersService.getCurrentUser(req);
+        return BaseResponse.success(teamService.getAllCreatedTeams(currentUser));
     }
 }
