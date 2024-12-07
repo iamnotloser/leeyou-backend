@@ -33,6 +33,7 @@ com\leeyoubackend\pojo\Team.class
 com\leeyoubackend\controller\UserController.class
 com\leeyoubackend\controller\TeamController.class
 com\leeyoubackend\mapper\TagsMapper.class
+com\leeyoubackend\utils\AlgorithmUtils.class
 com\leeyoubackend\constant\UserConstant.class
 com\leeyoubackend\mapper\UsersMapper.class
 com\leeyoubackend\mapper\UserTeamMapper.class

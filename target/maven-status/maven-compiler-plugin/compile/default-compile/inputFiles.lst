@@ -35,6 +35,7 @@ D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\job\PreCacheJob.
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\vo\UserVO.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\service\TeamService.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\config\MybatisPlusConfig.java
+D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\utils\AlgorithmUtils.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\vo\TeamUserVO.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\enums\TeamStausEnum.java
 D:\code\partener\leeyou-backend\src\main\java\com\leeyoubackend\pojo\request\TeamQuitRequest.java

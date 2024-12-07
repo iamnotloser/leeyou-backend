@@ -102,15 +102,15 @@ public class insertUsersTest {
 //        stopWatch.stop();
 //        System.out.println(stopWatch.getTotalTimeMillis());
 //    }
-    @Test
-    public void dodeleteUsers(){
-        QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.gt("id",100000);
-        usersMapper.delete(queryWrapper);
-    }
-
-//        public static void main(String[] args) {
-//            com.leeyoubackend.once.InsertUsers insertUsers = new com.leeyoubackend.once.InsertUsers();
-//            insertUsers.doInsertUsers();
-//        }
+//    @Test
+//    public void dodeleteUsers(){
+//        QueryWrapper queryWrapper=new QueryWrapper();
+//        queryWrapper.gt("id",16763);
+//        usersMapper.delete(queryWrapper);
+//    }
+//
+////        public static void main(String[] args) {
+////            com.leeyoubackend.once.InsertUsers insertUsers = new com.leeyoubackend.once.InsertUsers();
+////            insertUsers.doInsertUsers();
+////        }
     }

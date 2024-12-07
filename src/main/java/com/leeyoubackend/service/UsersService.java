@@ -1,8 +1,10 @@
 package com.leeyoubackend.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.leeyoubackend.constant.BaseResponse;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.vo.TeamUserVO;
+import com.leeyoubackend.pojo.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -52,4 +54,5 @@ public interface UsersService extends IService<Users> {
     Boolean isAdmin(Users loginuser);
 
 
+    List<Users> matchUsers(long num, HttpServletRequest req);
 }

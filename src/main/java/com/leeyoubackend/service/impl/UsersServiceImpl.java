@@ -5,21 +5,27 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.gson.Gson;
 import com.leeyoubackend.constant.ErrorCode;
 import com.leeyoubackend.exception.BusinesException;
-import com.leeyoubackend.pojo.Users;
-import com.leeyoubackend.pojo.vo.TeamUserVO;
-import com.leeyoubackend.service.UsersService;
 import com.leeyoubackend.mapper.UsersMapper;
+import com.leeyoubackend.pojo.Users;
+import com.leeyoubackend.service.UsersService;
+import com.leeyoubackend.utils.AlgorithmUtils;
+
+
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.lang3.StringUtils;
+
+import org.apache.commons.math3.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -248,6 +254,41 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
         return loginuser != null && Objects.equals(loginuser.getRole(), ADMIN_ROLE);
     }
 
+    @Override
+    public List<Users> matchUsers(long num, HttpServletRequest req) {
+        Users currentUser = this.getCurrentUser(req);
+        String tags = currentUser.getTags();
+        Gson gson = new Gson();
+        List<String> tagList = gson.fromJson(tags, List.class);
+        QueryWrapper<Users> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id", "tags");
+        queryWrapper.ne("tags", "[]");
+        queryWrapper.isNotNull("tags");
+        List<Users> userList = this.list(queryWrapper);
+        //用户列表下标 =》 相似度
+        List<Pair<Users, Integer>> list = new ArrayList<>();
+        SortedMap<Integer,Integer> similarityMap = new TreeMap<>();
+        //依次计算所有用户与当前用户相似度
+        for (int i = 0; i < userList.size(); i++) {
+            String newtags = userList.get(i).getTags();
+            Users user = userList.get(i);
+            //无标签 或者 是自己
+            if(StringUtils.isBlank(newtags) || user.getId() == currentUser.getId()){
+                continue;
+            }
+            List<String> newlist = gson.fromJson(newtags, List.class);
+            int distance = AlgorithmUtils.minDistance(tagList, newlist);
+            similarityMap.put(i,distance);
+            list.add(new Pair(user,distance));
+        }
+        List<Users> topUserList = list.stream()
+                .sorted((a, b)->a.getValue()-b.getValue()).limit(num)
+                .map(Pair::getKey).collect(Collectors.toList());
+
+
+
+        return topUserList;
+    }
 
 
     @Deprecated

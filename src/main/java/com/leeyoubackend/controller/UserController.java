@@ -8,6 +8,7 @@ import com.leeyoubackend.exception.BusinesException;
 import com.leeyoubackend.pojo.Users;
 import com.leeyoubackend.pojo.request.UserLoginRequest;
 import com.leeyoubackend.pojo.request.UserRegisterRequest;
+import com.leeyoubackend.pojo.vo.UserVO;
 import com.leeyoubackend.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -162,4 +163,17 @@ public class UserController {
         return BaseResponse.success(usersService.updateUser(user,currentUser));
     }
 
+    /**
+     * 获取最匹配的用户
+     * @param num
+     * @param req
+     * @return
+     */
+    @GetMapping("/match")
+    public BaseResponse<List<Users>> matchUsers(long num, HttpServletRequest req){
+        if(num <= 0 || num > 20){
+            throw new BusinesException(ErrorCode.PARAMS_ERROR);
+        }
+        return BaseResponse.success(usersService.matchUsers(num,req));
+    }
 }

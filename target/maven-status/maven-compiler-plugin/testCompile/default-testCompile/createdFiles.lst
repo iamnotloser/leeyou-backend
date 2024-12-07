@@ -1,5 +1,7 @@
+com\leeyoubackend\service\AlgorithmUtilsTest.class
 com\leeyoubackend\service\UsersServiceTest.class
-com\leeyoubackend\LeeyouBackendApplicationTests.class
 com\leeyoubackend\service\insertUsersTest.class
-com\leeyoubackend\service\redissonTest.class
 com\leeyoubackend\service\redistest.class
+com\leeyoubackend\utils\AlgorithmUtils.class
+com\leeyoubackend\LeeyouBackendApplicationTests.class
+com\leeyoubackend\service\redissonTest.class
