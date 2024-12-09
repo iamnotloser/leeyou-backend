@@ -26,7 +26,7 @@ import static com.leeyoubackend.constant.UserConstant.USER_LOGIN_STATE;
 //@Api(tags = "测试")
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:5173/",allowCredentials = "true")
+@CrossOrigin(value = {"http://localhost:5173/","http://localhost:3000/"},allowCredentials = "true")
 @Slf4j
 public class UserController {
     @Autowired
