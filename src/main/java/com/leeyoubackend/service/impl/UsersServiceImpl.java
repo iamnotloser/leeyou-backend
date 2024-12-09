@@ -7,6 +7,7 @@ import com.leeyoubackend.constant.ErrorCode;
 import com.leeyoubackend.exception.BusinesException;
 import com.leeyoubackend.mapper.UsersMapper;
 import com.leeyoubackend.pojo.Users;
+import com.leeyoubackend.pojo.vo.UserVO;
 import com.leeyoubackend.service.UsersService;
 import com.leeyoubackend.utils.AlgorithmUtils;
 
@@ -281,13 +282,20 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users>
             similarityMap.put(i,distance);
             list.add(new Pair(user,distance));
         }
-        List<Users> topUserList = list.stream()
+        List<Pair<Users, Integer>> topUserPairList = list.stream()
                 .sorted((a, b)->a.getValue()-b.getValue()).limit(num)
-                .map(Pair::getKey).collect(Collectors.toList());
+                .collect(Collectors.toList());
+        List<Long> topUserIdList = topUserPairList.stream().map(Pair ->Pair.getKey().getId()).collect(Collectors.toList());
 
 
-
-        return topUserList;
+        QueryWrapper<Users> queryWrapper1 = new QueryWrapper();
+        queryWrapper1.in("id",topUserIdList);
+        Map<Long, List<Users>> userIdUserListMap = this.list(queryWrapper1).stream().map(this::getsaferUser).collect(Collectors.groupingBy(user -> user.getId()));
+        List<Users> finalUserList = new ArrayList<>();
+        for(Long id:topUserIdList){
+            finalUserList.add(userIdUserListMap.get(id).get(0));
+        }
+        return finalUserList;
     }
 
 

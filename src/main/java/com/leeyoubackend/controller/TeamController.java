@@ -21,12 +21,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -107,12 +109,46 @@ public class TeamController {
 //    }
     @GetMapping("/list")
     public BaseResponse<List<TeamUserVO>> listTeams(TeamQuery teamQuery,HttpServletRequest req) {
-        Users currentUser = usersService.getCurrentUser(req);
         if (teamQuery == null) {
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-        List<TeamUserVO> teamList = teamService.listTeams(teamQuery,currentUser);
+        //1.查询队伍列表信息
+        boolean isAdmin = usersService.isAdmin(req);
+        List<TeamUserVO> teamList = teamService.listTeams(teamQuery,isAdmin);
+        if(CollectionUtils.isEmpty(teamList)){
+            return BaseResponse.success(new ArrayList<>());
+        }
+        //2.查询当前用户是否参加队伍
+        List<Long> teamIdList = teamList.stream().map(TeamUserVO::getId).collect(Collectors.toList());
+        QueryWrapper<UserTeam> queryWrapper = new QueryWrapper();
+        try {
+            Users currentUser = usersService.getCurrentUser(req);
+            queryWrapper.eq("user_id", currentUser.getId());
+
+            queryWrapper.in("team_id", teamIdList);
+
+
+            List<UserTeam> userTeamList = userTeamService.list(queryWrapper);
+            Set<Long> teamHasJoinIdSet = userTeamList.stream().map(UserTeam::getTeamId).collect(Collectors.toSet());
+            teamList.forEach(teamUserVO -> {
+                boolean hasJoin = teamHasJoinIdSet.contains(teamUserVO.getId());
+                teamUserVO.setHasJoin(hasJoin);
+            });
+        } catch (Exception e) {}
+        //查询已加入队伍队员数量
+        QueryWrapper<UserTeam> queryJoinWrapper = new QueryWrapper();
+        queryJoinWrapper.in("team_id", teamIdList);
+        List<UserTeam> userTeamJoinList = userTeamService.list(queryJoinWrapper);
+        //队伍id =》 加入该队伍用户列表
+        Map<Long, List<UserTeam>> listMap = userTeamJoinList.stream().collect(Collectors.groupingBy(UserTeam::getTeamId));
+        teamList.forEach(team -> {
+
+            team.setHasJoinNum(listMap.getOrDefault(team.getId(),new ArrayList<>()).size());
+        });
         return BaseResponse.success(teamList);
+
+
+
     }
 
     @GetMapping("/list/page")
@@ -136,7 +172,6 @@ public class TeamController {
         if(teamJoinRequst == null){
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
-
         Users currentUser = usersService.getCurrentUser(req);
         boolean result = teamService.joinTeam(teamJoinRequst,currentUser);
         if(!result){

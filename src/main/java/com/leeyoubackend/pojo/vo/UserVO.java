@@ -31,7 +31,6 @@ public class UserVO implements Serializable {
     private String userAccount;
 
 
-
     /**
      * 头像url
      */
@@ -68,7 +67,6 @@ public class UserVO implements Serializable {
     private Date updateTime;
 
 
-
     /**
      * 权限 0 默认角色 1 管理员
      */
@@ -81,6 +79,7 @@ public class UserVO implements Serializable {
 
 
     private String tags;
+
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
