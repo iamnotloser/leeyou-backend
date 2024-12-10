@@ -243,7 +243,7 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
 
     @Override
     public boolean joinTeam(TeamJoinRequest teamJoinRequst, Users loginUser) {
-        if(teamJoinRequst == null){
+        if (teamJoinRequst == null) {
             throw new BusinesException(ErrorCode.NULL_ERROR);
         }
         long userid = loginUser.getId();
@@ -253,46 +253,46 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
 //            throw new BusinesException(ErrorCode.PARAMS_ERROR,"不能加入自己的队伍");
 //        }
         Date expireTime = team.getExpireTime();
-        if( expireTime != null && expireTime.before(new Date())){
-            throw new BusinesException(ErrorCode.PARAMS_ERROR,"队伍已过期");
+        if (expireTime != null && expireTime.before(new Date())) {
+            throw new BusinesException(ErrorCode.PARAMS_ERROR, "队伍已过期");
         }
         Integer status = team.getStatus();
         TeamStausEnum enumByValue = TeamStausEnum.getEnumByValue(status);
-        if(TeamStausEnum.PRIVATE.equals(enumByValue)){
-            throw new BusinesException(ErrorCode.PARAMS_ERROR,"禁止加入私有队伍");
+        if (TeamStausEnum.PRIVATE.equals(enumByValue)) {
+            throw new BusinesException(ErrorCode.PARAMS_ERROR, "禁止加入私有队伍");
         }
-        if(TeamStausEnum.SECRET.equals(enumByValue)){
+        if (TeamStausEnum.SECRET.equals(enumByValue)) {
             String password = teamJoinRequst.getPassword();
-            if(StringUtils.isBlank(password) || !password.equals(team.getPassword())){
-                throw new BusinesException(ErrorCode.PARAMS_ERROR,"密码错误");
+            if (StringUtils.isBlank(password) || !password.equals(team.getPassword())) {
+                throw new BusinesException(ErrorCode.PARAMS_ERROR, "密码错误");
             }
         }
         //分布式锁，只有一个线程能获取到锁
         RLock lock = redissonClient.getLock("leeyou:joinTeam:lock");
         try {
             while (true) {
-                if (lock.tryLock(0,30000,TimeUnit.MILLISECONDS)) {
-                    System.out.println("lock--------------"+Thread.currentThread().getId());
+                if (lock.tryLock(0, 30000, TimeUnit.MILLISECONDS)) {
+                    System.out.println("lock--------------" + Thread.currentThread().getId());
                     // 预热缓存
                     //判断队伍人数是否超过
                     long hasJoinUserNum = getHasJoinUserNum(teamId);
-                    if(team.getMaxNum() <= hasJoinUserNum){
-                        throw new BusinesException(ErrorCode.PARAMS_ERROR,"队伍已满");
+                    if (team.getMaxNum() <= hasJoinUserNum) {
+                        throw new BusinesException(ErrorCode.PARAMS_ERROR, "队伍已满");
                     }
                     //不能加入已加入的队伍
                     QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();
-                    queryWrapper.eq("user_id",userid);
-                    queryWrapper.eq("team_id",teamId);
+                    queryWrapper.eq("user_id", userid);
+                    queryWrapper.eq("team_id", teamId);
                     long hasUserJoinTeam = userTeamService.count(queryWrapper);
-                    if(hasUserJoinTeam > 0){
-                        throw new BusinesException(ErrorCode.PARAMS_ERROR,"已加入该队伍");
+                    if (hasUserJoinTeam > 0) {
+                        throw new BusinesException(ErrorCode.PARAMS_ERROR, "已加入该队伍");
                     }
                     queryWrapper = new QueryWrapper<>();
-                    queryWrapper.eq("user_id",userid);
+                    queryWrapper.eq("user_id", userid);
 
                     long hasJoinNum = userTeamService.count(queryWrapper);
-                    if(hasJoinNum > 5){
-                        throw new BusinesException(ErrorCode.PARAMS_ERROR,"最多创建和加入5个队伍");
+                    if (hasJoinNum > 5) {
+                        throw new BusinesException(ErrorCode.PARAMS_ERROR, "最多创建和加入5个队伍");
                     }
                     //修改队伍信息
                     UserTeam userTeam = new UserTeam();
@@ -304,16 +304,16 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
                     return result;
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            return false;
-        }finally {
-            if(lock.isHeldByCurrentThread()){
-                System.out.println("unlock--------------"+Thread.currentThread().getId());
-                lock.unlock();
+            } catch(Exception e){
+                e.printStackTrace();
+                return false;
+            }finally{
+                if (lock.isHeldByCurrentThread()) {
+                    System.out.println("unlock--------------" + Thread.currentThread().getId());
+                    lock.unlock();
+                }
             }
         }
-    }
 
     private long getHasJoinUserNum(Long teamId) {
         QueryWrapper<UserTeam> queryWrapper = new QueryWrapper<>();

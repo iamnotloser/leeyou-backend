@@ -2,17 +2,100 @@
 spring:
   application:
     name: leeyou_backend
+    jackson:
+      date-format: yyyy-MM-dd
+      time-zone: Asia/Shanghai
     #数据库连接信息
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://gz-cynosdbmysql-grp-o96tnry3.sql.tencentcdb.com:23456/user_center_web
     username: root
     password: 18370961542Mask@
-    #session超时时间
-  session:
-    timeout: 86400
+    #session超时时间(分钟)
+    session:
+      cookie:
+        path: /
+        domain: http://119.91.48.253
+      timeout: 86400
+      store-type: redis
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  data:
+    #redis数据库连接信息
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      password:
 
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: is_delete # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-guangzhou.aliyuncs.com
+    bucketName: leeyoou
+    region: cn-guangzhou
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: localhost
+#swagger:
+#  enabled: true
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    tags-sorter: alpha
+#    operations-sorter: alpha
+#  api-docs:
+#    path: /v2/api-docs
+#  group-configs:
+#    - group: 'default'
+#      paths-to-match: '/**'
+#      #生成文档所需的扫包路径，一般为启动类目录
+#      packages-to-scan: com.leeyoubackend.controller
+#  default-flat-param-object: true
+knife4j:
+  enable: true
+  openapi:
+    title: Knife4j官方文档
+    description: "`我是测试`,**你知道吗**
+    # aaa"
+    email: xiaoymin@foxmail.com
+    concat: 八一菜刀
+    url: https://docs.xiaominfo.com
+    version: v4.0
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: Usercontroller
+        api-rule: package
+        api-rule-resources:
+          - com.leeyoubackend.controller
+#      test2:
+#        group-name: Teamcontroller
+#        api-rule: package
+#        api-rule-resources:
+#          - com.leeyoubackend.controller.TeamController

@@ -25,7 +25,8 @@ public class RedissonConfig {
         String Address = "redis://127.0.0.1:6379";
         Config config = new Config();
 
-        config.useSingleServer().setAddress(Address).setDatabase(3);
+        config.useSingleServer().setAddress(Address)
+                .setDatabase(3);
         config.setTransportMode(org.redisson.config.TransportMode.NIO);
                 // use "rediss://" for SSL connection
 

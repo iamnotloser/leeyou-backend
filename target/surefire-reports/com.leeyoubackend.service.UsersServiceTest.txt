@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.leeyoubackend.service.UsersServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.338 s -- in com.leeyoubackend.service.UsersServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.677 s -- in com.leeyoubackend.service.UsersServiceTest
